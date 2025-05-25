@@ -94,6 +94,7 @@ main {
 }
 
 .card {
+    text-align: center;
     background: #333;
     padding: 10px;
     border-radius: 6px;
@@ -110,3 +111,12 @@ main {
     font-size: 14px;
     color: #ccc;
 }
+
+footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 14px;
+}COMPLETED
