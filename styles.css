@@ -13,10 +13,11 @@ body {
 
 header {
     background: #1a1a1a;
-    padding: 20px 40px;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -29,9 +30,14 @@ header {
     color: orange;
 }
 
+nav {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
 nav a {
     color: #bbb;
-    margin-left: 20px;
     text-decoration: none;
     font-size: 14px;
 }
@@ -41,12 +47,14 @@ nav a:hover {
 }
 
 main {
-    padding: 40px;
+    padding: 40px 20px;
 }
 
 .featured-article {
     display: flex;
     align-items: center;
+    gap: 30px;
+    flex-wrap: nowrap;
     margin-bottom: 50px;
 }
 
@@ -58,7 +66,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 40px;
+    flex-shrink: 0;
 }
 
 .triangle img {
@@ -91,14 +99,16 @@ main {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .card {
-    text-align: center;
     background: #333;
     padding: 10px;
     border-radius: 6px;
     width: 200px;
+    flex: 1 1 200px;
+    max-width: 220px;
 }
 
 .card img {
@@ -112,6 +122,7 @@ main {
     color: #ccc;
 }
 
+/* Footer */
 footer {
     background-color: #1a1a1a;
     color: #ccc;
@@ -119,4 +130,56 @@ footer {
     padding: 20px;
     margin-top: 40px;
     font-size: 14px;
-}COMPLETED
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    .featured-article {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: left;
+    }
+
+    .article-text {
+        flex: 1 1 250px;
+        min-width: 250px;
+    }
+
+    .triangle {
+        margin-bottom: 20px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .article-text h2 {
+        font-size: 20px;
+    }
+
+    .card p {
+        font-size: 13px;
+    }
+}
